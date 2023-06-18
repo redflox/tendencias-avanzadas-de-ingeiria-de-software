@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Definición de los elementos -->
+  
+  <xs:element name="header" type="HeaderType"/>
+  
+  <xs:element name="logo" type="xs:string"/>
+  
+  <xs:element name="enlace" type="xs:string"/>
+  
+  <xs:element name="barraDeBusqueda" type="xs:string"/>
+  
+  <xs:element name="columnaPrincipal" type="ColumnaPrincipalType"/>
+  
+  <xs:element name="contenido" type="ContenidoType"/>
+  
+  <xs:element name="titulo" type="xs:string"/>
+  
+  <xs:element name="imagen" type="xs:string"/>
+  
+  <xs:element name="texto" type="xs:string"/>
+  
+  <xs:element name="autor" type="xs:string"/>
+  
+  <xs:element name="fecha" type="xs:date"/>
+  
+  <xs:element name="barraLateral" type="BarraLateralType"/>
+  
+  <xs:element name="menu" type="xs:string"/>
+  
+  <xs:element name="footer" type="FooterType"/>
+  
+  <xs:element name="textoFooter" type="xs:string"/>
+  
+  <xs:element name="enlaceFooter" type="xs:string"/>
+  
+  <xs:element name="logoFooter" type="xs:string"/>
+  
+  
+  <!-- Definición de los tipos complejos -->
+  
+  <xs:complexType name="HeaderType">
+    <xs:sequence>
+      <xs:element ref="logo"/>
+      <xs:element ref="enlace"/>
+      <xs:element ref="barraDeBusqueda"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ColumnaPrincipalType">
+    <xs:sequence>
+      <xs:element ref="contenido"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ContenidoType">
+    <xs:sequence>
+      <xs:element ref="titulo"/>
+      <xs:element ref="imagen"/>
+      <xs:element ref="texto"/>
+      <xs:element ref="autor"/>
+      <xs:element ref="fecha"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="BarraLateralType">
+    <xs:sequence>
+      <xs:element ref="menu"/>
+    </xs:sequence>
+    <xs:attribute name="posicion" type="xs:string"/>
+  </xs:complexType>
+  
+  <xs:complexType name="FooterType">
+    <xs:sequence>
+      <xs:element ref="textoFooter"/>
+      <xs:element ref="enlaceFooter"/>
+      <xs:element ref="logoFooter"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
