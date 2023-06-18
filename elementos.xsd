@@ -40,6 +40,12 @@
   
   <!-- Definición de los tipos complejos -->
 
+  <xs:simpleType name="LeftOrRight">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="left|right"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:complexType name="Logo">
     <xs:attribute name="url" type="xs:string" use="optional"/>
   </xs:complexType>
@@ -72,7 +78,7 @@
     <xs:sequence>
       <xs:element ref="menu"/>
     </xs:sequence>
-    <xs:attribute name="posicion" type="xs:string"/>
+    <xs:attribute name="posicion" type="LeftOrRight"/>
   </xs:complexType>
   
   <xs:complexType name="FooterType">
