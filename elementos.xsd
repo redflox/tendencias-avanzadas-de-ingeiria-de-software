@@ -5,7 +5,7 @@
   
   <xs:element name="header" type="HeaderType"/>
   
-  <xs:element name="logo" type="xs:string"/>
+  <xs:element name="logo" type="Logo"/>
   
   <xs:element name="enlace" type="xs:string"/>
   
@@ -35,11 +35,15 @@
   
   <xs:element name="enlaceFooter" type="xs:string"/>
   
-  <xs:element name="logoFooter" type="xs:string"/>
+  <xs:element name="logoFooter" type="Logo"/>
   
   
   <!-- Definición de los tipos complejos -->
-  
+
+  <xs:complexType name="Logo">
+    <xs:attribute name="url" type="xs:string" use="optional"/>
+  </xs:complexType>
+ 
   <xs:complexType name="HeaderType">
     <xs:sequence>
       <xs:element ref="logo"/>
