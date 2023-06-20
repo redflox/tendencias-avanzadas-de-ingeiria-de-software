@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="elementos.xsd">
+      xsi:noNamespaceSchemaLocation="blog.xsd">
 
   <titulo longitud="10">BLOG UD</titulo>
 
