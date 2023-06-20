@@ -51,7 +51,7 @@
       <xs:element ref="texto"/>     
       <xs:element ref="imagen"/>
       <xs:anyAttribute pro
-      cessContent="skip"/>
+      <xs:anyAttribute processContent="skip"/>
     </xs:sequence>
   </xs:complexType>
 
