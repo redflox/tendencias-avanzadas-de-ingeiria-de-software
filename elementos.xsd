@@ -89,4 +89,38 @@
     </xs:sequence>
   </xs:complexType>
 
+  <!-- Abstraccion de un blog por: Bryan Muñoz --!>
+
+  <!-- Definición de un Blog -->
+  <xs:element name="blog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="titulo" type="xs:string"/>
+        <xs:element name="descripcion" type="xs:string"/>
+        <xs:element name="post" type="post" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <!-- Definición de un Post -->
+  <xs:complexType name="post">
+    <xs:sequence>
+      <xs:element name="titulo" type="xs:string"/>
+      <xs:element name="autor" type="xs:string"/>
+      <xs:element name="fecha" type="xs:date"/>
+      <xs:element name="contenido" type="xs:string"/>
+      <xs:element name="etiquetas" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="comentarios" type="comentario" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Definición de un Comentario -->
+  <xs:complexType name="comentario">
+    <xs:sequence>
+      <xs:element name="nombreUsuario" type="xs:string"/>
+      <xs:element name="fecha" type="xs:date"/>
+      <xs:element name="texto" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
 </xs:schema>
