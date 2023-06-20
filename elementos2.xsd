@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="header" type="HeaderType"/>
   
-  <xs:element name="header" type="HeaderType"/> 
-  
-  <xs:element name="enlace" type="xs:string"/>
+  <xs:element name="enlace" type="xs:anyURI"/>
   
   <xs:element name="barraDeBusqueda" type="xs:string"/>
   
-  <xs:element name="barraLateral" type="BarraLateralType"/>
-  
-  <xs:element name="menu" type="xs:string"/>
-  
-  <xs:element name="footer" type="FooterType"/>
- 
-  
+  <xs:element name="barraLateral" type="BarraLateralType"/> 
 
   
+  <xs:element name="footer" type="FooterType"/>
+
   <xs:simpleType name="LeftOrRight">
     <xs:restriction base="xs:string">
       <xs:pattern value="left|right"/>
     </xs:restriction>
   </xs:simpleType>
- 
+
+
+  <xs:element name="menu">
+    <xs:complexType>
+        <xs:sequence>
+        <xs:element name="valor" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
   <xs:complexType name="HeaderType">
     <xs:sequence>
       <xs:element ref="imagen"/>
@@ -30,14 +36,14 @@
       <xs:anyAttribute processContent="skip"/>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="ColumnaPrincipalType">
     <xs:sequence>
       <xs:element ref="post"/>
       <xs:anyAttribute processContent="skip"/>
     </xs:sequence>
   </xs:complexType>
-  
+
   <xs:complexType name="BarraLateralType">
     <xs:sequence>
       <xs:element ref="menu"/>
@@ -45,13 +51,12 @@
     </xs:sequence>
     <xs:attribute name="posicion" type="LeftOrRight"/>
   </xs:complexType>
-  
+
   <xs:complexType name="FooterType">
     <xs:sequence>
       <xs:element ref="texto"/>     
       <xs:element ref="imagen"/>
-      <xs:anyAttribute pro
-      cessContent="skip"/>
+      <xs:anyAttribute processContent="skip"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -66,18 +71,20 @@
   </xs:element>
 
   <xs:complexType name="texto">
-    <xs:sequence>
-      <xs:attribute name="longitud" type="xs:integer" use="required"/>
-      <xs:attribute name="style" type="style" use="optional"/>
-      <xs:anyAttribute processContent="skip"/>
-    </xs:sequence>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="longitud" type="xs:integer" use="required"/>
+        <xs:attribute name="style" type="xs:string" use="optional"/>
+        <xs:anyAttribute processContent="skip"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 
   <xs:element name="imagen">
     <xs:complexType>
       <xs:attribute name="src" type="xs:anyURI" use="required"/>
       <xs:attribute name="href" type="xs:anyURI" use="optional"/>
-      <xs:attribute name="style" type="style" use="optional"/>
+      <xs:attribute name="style" type="xs:string" use="optional"/>
     </xs:complexType>
   </xs:element>
 
@@ -91,7 +98,6 @@
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="post" type="post" minOccurs="0" maxOccurs="unbounded"/>
   <xs:complexType name="post">
     <xs:sequence>
       <xs:element name="id" type="xs:positiveInteger"/>
