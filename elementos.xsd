@@ -89,8 +89,6 @@
     </xs:sequence>
   </xs:complexType>
 
-  <!-- Abstraccion de un blog por: Bryan Muñoz --!>
-
   <!-- Definición de un Blog -->
   <xs:element name="blog">
     <xs:complexType>
@@ -105,10 +103,11 @@
   <!-- Definición de un Post -->
   <xs:complexType name="post">
     <xs:sequence>
-      <xs:element name="titulo" type="xs:string"/>
-      <xs:element name="autor" type="xs:string"/>
-      <xs:element name="fecha" type="xs:date"/>
-      <xs:element name="contenido" type="xs:string"/>
+      <xs:element name="id" type="xs:positiveInteger"/>
+      <xs:element name="titulo" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="autor" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="fecha" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="contenido" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="etiquetas" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="comentarios" type="comentario" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
@@ -117,9 +116,10 @@
   <!-- Definición de un Comentario -->
   <xs:complexType name="comentario">
     <xs:sequence>
-      <xs:element name="nombreUsuario" type="xs:string"/>
-      <xs:element name="fecha" type="xs:date"/>
-      <xs:element name="texto" type="xs:string"/>
+      <xs:element name="id" type="xs:positiveInteger"/>
+      <xs:element name="nombreUsuario" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="fecha" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="texto" type="xs:string" minOccurs="1" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
 
