@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="blog.xsd">
+
+  <titulo longitud="10">BLOG UD</titulo>
+
+  <descripcion longitud="10">Avisos de la universidad distrital</descripcion>
+
+  <header>
+    <menu>
+      <item href="/home">Inicio</item>
+      <item href="/posts">posts</item>
+      <item href="/about">Acerca de</item>
+    </menu>
+    <imagen src="imagen.jpg" href="enlace.html" style="estilo-imagen" />
+    <enlace>https://www.ejemplo.com</enlace>
+    <barraDeBusqueda>Buscar...</barraDeBusqueda>
+  </header>
+
+  <body>
+    <contenido>
+      <post>
+        <id>1</id>
+        <titulo longitud="100">Título del post</titulo>
+        <autor longitud="50">Autor del post</autor>
+        <fecha>2023-06-20</fecha>
+        <contenido longitud="500">Contenido del post</contenido>
+        <etiquetas longitud="20">etiqueta1</etiquetas>
+        <etiquetas longitud="20">etiqueta2</etiquetas>
+        <comentarios>
+          <comentario>
+            <id>1</id>
+            <nombreUsuario longitud="50">Usuario1</nombreUsuario>
+            <fecha>2023-06-20</fecha>
+            <texto longitud="200">Comentario 1</texto>
+          </comentario>
+          <comentario>
+            <id>2</id>
+            <nombreUsuario longitud="50">Usuario2</nombreUsuario>
+            <fecha>2023-06-20</fecha>
+            <texto longitud="200">Comentario 2</texto>
+          </comentario>
+        </comentarios>
+      </post>
+    </contenido>
+  </body>
+
+  <footer>
+    <textoFooter longitud="10">BLOG UD</textoFooter>
+    <imagen src="imagen2.jpg" />
+  </footer>
+
+</blog>
