@@ -1,6 +1,5 @@
 # GENERADOR DE BLOGS WEB.
-https://krunker.io/?game=MIA:jek21
-https://prod.liveshare.vsengsaas.visualstudio.com/join?41F80DA6277924D5BF5D19BDD564D0650614
+https://prod.liveshare.vsengsaas.visualstudio.com/join?371876BC542A42A94CF4B5530AD101C135DF
 # Estructura
 
 - Header
