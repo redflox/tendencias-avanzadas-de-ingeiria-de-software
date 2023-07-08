@@ -72,33 +72,24 @@ function App() {
       // COLUMNA PRINCIPAL
       if(columnaPrincipal){
         const colprinElement = xml.ele('body');
-        const contenidoElement = xml.ele('contenido')
+        const contenidoElement = colprinElement.ele('contenido')
         if(posts){
-          const postsElement = contenidoElement.ele('post');
-          //-------------------------------------------
-          const tituloElement = postsElement.ele('titulo').txt(nombreArticulo).up();
-          const autorElement = postsElement.ele('autor').txt(nombreAutor).up();
-          const fechaElement = postsElement.ele('fecha').txt(fecha).up();
-          const contPostElement = postsElement.ele('contenido-post').txt(contenidoPost).up();
-          const imagenElement = postsElement.ele('imagen').txt(imagen).up();
+          const postsElement = contenidoElement.ele('post');         
         }
       }
 
       //FOOTER
-      
-
-      
+      if(footer){
+        const footerElement = xml.ele('footer');        
+      }      
       const xmlString = xml.end({ prettyPrint: true });
       console.log(xmlString);
     } catch (error) {
       // Manejo de la excepción
       console.error("Se capturó una excepción:", error.message);
       alert("REVISA EL FORMULARIO")
-    }
-    
+    } 
 
-
-    
   };
 
   return (
@@ -212,65 +203,11 @@ function App() {
                     <option value="no">No</option>
                     <option value="si">Sí</option>
                   </select>
-                </div>
-
-                {posts && (
-                  <>
-                    <div className="formulario-grupo">
-                      <label htmlFor="nombreAutor">Nombre autor:</label>
-                      <input
-                        type="text"
-                        id="nombreAutor"
-                        value={nombreAutor}
-                        onChange={(e) => setNombreAutor(e.target.value)}
-                      />
-                    </div>
-
-                    <div className="formulario-grupo">
-                      <label htmlFor="fecha">Fecha:</label>
-                      <input
-                        type="date"
-                        id="fecha"
-                        value={fecha}
-                        onChange={(e) => setFecha(e.target.value)}
-                      />
-                    </div>
-
-                    <div className="formulario-grupo">
-                      <label htmlFor="nombreArticulo">Nombre artículo:</label>
-                      <input
-                        type="text"
-                        id="nombreArticulo"
-                        value={nombreArticulo}
-                        onChange={(e) => setNombreArticulo(e.target.value)}
-                      />
-                    </div>
-
-                    <div className="formulario-grupo">
-                      <label htmlFor="contenidoPost">ContenidoPost:</label>
-                      <textarea
-                        id="contenidoPost"
-                        value={contenidoPost}
-                        onChange={(e) => setContenidoPost(e.target.value)}
-                      ></textarea>
-                    </div>
-
-                    <div className="formulario-grupo">
-                      <label htmlFor="imagen">Imagen:</label>
-                      <input
-                        type="file"
-                        id="imagen"
-                        value={imagen}
-                        onChange={(e) => setImagen(e.target.value)}
-                      />
-                    </div>
-                  </>
-                )}
+                </div>               
               </>
             )}
           </div>
         </div>
-
 
         {/* FOOTER */}
 
@@ -283,34 +220,9 @@ function App() {
                 <option value="no">No</option>
                 <option value="si">Sí</option>
               </select>
-            </div>
-
-            {footer && (
-              <>
-                <div className="formulario-grupo">
-                  <label htmlFor="imagenFooter">Imagen:</label>
-                  <input
-                    type="file"
-                    id="imagenFooter"
-                    value={imagenFooter}
-                    onChange={(e) => setImagenFooter(e.target.value)}
-                  />
-                </div>
-
-                <div className="formulario-grupo">
-                  <label htmlFor="textoFooter">Texto:</label>
-                  <input
-                    type="text"
-                    id="textoFooter"
-                    value={textoFooter}
-                    onChange={(e) => setTextoFooter(e.target.value)}
-                  />
-                </div>
-              </>
-            )}
+            </div>           
           </div>
         </div>
-
 
         <button type="submit" className="formulario-button">Enviar</button>
       </form>
