@@ -36,7 +36,4 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?371876BC542A42A94CF4B5530
 
 - https://github.com/Akash1362000/Django_BlogApp 
 
-<xs:header>
-
-</xs:header>
 
