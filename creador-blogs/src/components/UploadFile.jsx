@@ -15,25 +15,19 @@ const UploadFile = () => {
 
     axios.post('http://localhost:8000/validate_xml', formData)
     .then(res => {
-      switch (res.status) {
+      // console.log("DATA: ", res.data)
+      switch (res.data.status) {
         case 200:  // Todo está bien
           setModalContent({
             title: 'Exito',
-            body: 'El archivo XML fue procesado correctamente.',
+            body: res.data.message,
             variant: 'success'
           });
           break;
         case 400:  // Bad Request
           setModalContent({
             title: 'Error',
-            body: 'Hubo un error en el envío. Por favor, revisa el archivo y vuelve a intentarlo.',
-            variant: 'danger'
-          });
-          break;
-        case 500:  // Internal Server Error
-          setModalContent({
-            title: 'Error',
-            body: 'Hubo un error interno en el servidor. Por favor, intenta nuevamente más tarde.',
+            body: res.data.message,
             variant: 'danger'
           });
           break;
@@ -49,7 +43,7 @@ const UploadFile = () => {
     .catch(err => {
       setModalContent({
         title: 'Error',
-        body: 'Hubo un error en la conexión con el servidor. Por favor, intenta nuevamente más tarde.',
+        body: err.message,
         variant: 'danger'
       });
       setShowModal(true);

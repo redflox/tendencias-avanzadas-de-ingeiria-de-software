@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { create } from 'xmlbuilder2';
 import axios from 'axios';
+import { Modal, Button, Alert } from 'react-bootstrap';
 
 function FormXSD() {
     // States
@@ -12,6 +13,9 @@ function FormXSD() {
     const [columnaPrincipal, setColumnaPrincipal] = useState(false);
     const [posts, setPosts] = useState(false);
     const [footer, setFooter] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [modalContent, setModalContent] = useState({ title: '', body: '', variant: '' });
+
 
     // Handlers
     const handleHeaderChange = e => setHeader(e.target.value === 'si');
@@ -69,14 +73,56 @@ function FormXSD() {
             }
 
             const xmlString = xml.end({ prettyPrint: true });
-            console.log(xmlString);
+            // console.log(xmlString);
             // Enviar el XML al backend para validación
-            const response = await axios.post('http://localhost:8000/validate_xml', {
-                xml: xmlString,
-            });
-
-            console.log(response.data);
-
+            
+            const formData = new FormData();
+            formData.append('file', new Blob([xmlString], { type: 'text/xml' }), 'file.xml');
+        
+            try {
+                const response = await axios.post('http://localhost:8000/validate_xml', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                })
+                .then(res => {
+                    // console.log("DATA: ", res.data)
+                    switch (res.data.status) {
+                      case 200:  // Todo está bien
+                        setModalContent({
+                          title: 'Exito',
+                          body: res.data.message,
+                          variant: 'success'
+                        });
+                        break;
+                      case 400:  // Bad Request
+                        setModalContent({
+                          title: 'Error',
+                          body: res.data.message,
+                          variant: 'danger'
+                        });
+                        break;
+                      default:
+                        setModalContent({
+                          title: 'Error',
+                          body: 'Ha ocurrido un error desconocido.',
+                          variant: 'danger'
+                        });
+                    }
+                    setShowModal(true);
+                  })
+                  .catch(err => {
+                    setModalContent({
+                      title: 'Error',
+                      body: err.message,
+                      variant: 'danger'
+                    });
+                    setShowModal(true);
+                  });
+            } catch (error) {
+                console.error("Se capturó una excepción:", error.message);
+            }
+        
         } catch (error) {
             console.error("Se capturó una excepción:", error.message);
             // alert("REVISA EL FORMULARIO: " + error.message);
@@ -155,6 +201,21 @@ function FormXSD() {
 
                 <button type="submit" className="btn btn-primary">Enviar</button>
             </form>
+            <Modal show={showModal} onHide={() => setShowModal(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{modalContent.title}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Alert variant={modalContent.variant}>
+                        {modalContent.body}
+                    </Alert>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowModal(false)}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
 
     );
