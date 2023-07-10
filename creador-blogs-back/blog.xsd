@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="header" type="HeaderType"/>
+  
+  <xs:element name="enlace" type="xs:anyURI"/>
+  
+  <xs:element name="barraDeBusqueda" type="xs:string"/>
+  
+  <xs:element name="footer" type="FooterType"/>
+
+  <xs:element name="menu">
+    <xs:complexType>
+        <xs:sequence>
+        <xs:element name="item" type="itemType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+ 
+  <xs:complexType name="itemType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="icon" type="xs:anyURI" use="optional"/>
+        <xs:attribute name="href" type="xs:anyURI" use="required"/>
+        <xs:attribute name="style" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+    
+  </xs:complexType>
+
+  <xs:complexType name="HeaderType">
+    <xs:sequence>
+      <xs:element ref="menu"/>
+      <xs:element ref="imagen"/>
+      <xs:element ref="enlace"/>
+      <xs:element ref="barraDeBusqueda"/>
+      <!-- <xs:anyAttribute processContent="skip"/> -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FooterType">
+    <xs:sequence>
+      <xs:element name="textoFooter" type="texto"/>     
+      <xs:element ref="imagen"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="style">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="type" type="xs:string" use="optional" fixed="text/css"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="texto">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="longitud" type="xs:integer" use="required"/>
+        <xs:attribute name="style" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:element name="imagen">
+    <xs:complexType>
+      <xs:attribute name="src" type="xs:anyURI" use="required"/>
+      <xs:attribute name="href" type="xs:anyURI" use="optional"/>
+      <xs:attribute name="style" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="blog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="titulo" type="texto" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="descripcion" type="texto" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="header" type="HeaderType" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="body" type="ColumnaPrincipalType" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="footer" type="FooterType" minOccurs="0" maxOccurs="1"/>
+        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="post">
+    <xs:sequence>
+      <xs:element name="id" type="xs:positiveInteger"/>
+      <xs:element name="titulo" type="texto" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="autor" type="texto" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="fecha" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="contenido" type="texto" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="etiquetas" type="texto" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="comentarios" type="comentariosType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ColumnaPrincipalType">
+    <xs:sequence>
+      <xs:element name="contenido" type="postList"/>
+    </xs:sequence>
+  </xs:complexType>
+
+    <xs:complexType name="postList">
+      <xs:sequence>
+      <xs:element name="post" type="post" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="comentario">
+    <xs:sequence>
+      <xs:element name="id" type="xs:positiveInteger"/>
+      <xs:element name="nombreUsuario" type="texto" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="fecha" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="texto" type="texto" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="comentariosType">
+      <xs:sequence>
+      <xs:element name="comentario" type="comentario" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
