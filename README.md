@@ -1,5 +1,4 @@
 # GENERADOR DE BLOGS WEB.
-https://prod.liveshare.vsengsaas.visualstudio.com/join?371876BC542A42A94CF4B5530AD101C135DF
 
 prototipo generador de código automatico para la creación de blogs personalizados, 
 basado en las metodologías MDA y MDE. 
