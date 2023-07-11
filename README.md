@@ -12,14 +12,14 @@ basado en las metodologías MDA y MDE.
 5. Abre la consola o terminal del Visual Studio Code.
 6. Ubicate en la ruta //creador-blogs-back.
 7. Ahora ejecuta los siguientes 4 comandos uno por uno:
-       python3 -m venv venv
-       .\venv\Scripts\activate
-       pip install -r .\requirement
-       hypercorn main:app --bind 0.0.0.00.0.0:8000
+      - python3 -m venv venv
+      - .\venv\Scripts\activate
+      - pip install -r .\requirement
+      - hypercorn main:app --bind 0.0.0.00.0.0:8000
    En este momento ya debe estarse ejecutando el back
 8. Abre otra terminal, situate en la ruta //creador-blogs y ejecuta los siguientes 2 comandos:
-       npm install
-       npm start
+      - npm install
+      - npm start
    En este momento se esta ejecutando el front, debe abrirse el navegador, en caso de no hacerlo
    abre el navegador y ve a la ruta localhost:3000
 9. Encontraras 3 pestañas, en la pestaña"Upload File" se podra cargar un archivo .xml y se validara si cumple la estructura del XSD.
