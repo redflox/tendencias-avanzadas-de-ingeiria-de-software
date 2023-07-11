@@ -99,3 +99,42 @@
     </xs:complexType>
 </xs:element>
 </xs:schema>
+
+<!-- BLOG -->
+    <!-- HEADER -->
+            <!-- REDES SOCIALES -->
+                <!-- FACEBOOK -->
+                    <!-- ICONO -->
+                    <!-- URL -->
+                <!-- INSTAGRAM -->
+                    <!-- ICONO -->
+                    <!-- URL -->
+            <!-- NAVBAR -->
+                <!-- LOGO -->
+                    <!-- IMAGEN -->
+                    <!-- URL -->
+                <!-- PAGES -->
+                    <!-- NOMBRE -->
+                    <!-- URL -->
+    
+    <!-- MAIN -->
+        <!-- BLOG DESTACADO -->
+            <!-- IMAGEN -->
+            <!-- TITULO -->
+            <!-- DESCRIPCION -->
+            <!-- URL -->
+
+        <!-- TODOS LOS BLOGS -->
+            <!-- POSTS -->
+                <!-- IMAGEN -->
+                <!-- TITULO -->
+                <!-- DESCRIPCION -->
+                <!-- URL -->
+        <!-- CONTACTO -->
+            <!-- CORREO -->
+            <!-- PAGINA WEB -->
+
+    <!-- FOOTER -->
+            <!-- URL -->
+            <!-- IMAGEN -->
+            <!-- TEXTO -->

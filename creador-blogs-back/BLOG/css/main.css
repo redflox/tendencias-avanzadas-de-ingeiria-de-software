@@ -38,12 +38,14 @@ header .header-icons-conteiner .icons {
     display: flex;
     justify-items: flex-end;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     justify-self: end;
     margin-right: 20px;
 }
 
-
+header .header-icons-conteiner .icons a {
+    margin-left: 10px;
+}
 
 header .header-icons-conteiner .icons span{
     color: white;
@@ -164,7 +166,7 @@ nav .profile-link a {
 
 .blogs-news-info-container p {
     margin-bottom: 35px;
-
+    text-align: justify;
 }
 
 .home-body {
@@ -198,7 +200,7 @@ nav .profile-link a {
 
 .blogs-post-container .post-container {
     display: inline-block;
-    padding-left: 10px;
+    padding-left: 20px;
     max-width: 30%;
     margin-bottom: 30px;
 }
@@ -268,7 +270,6 @@ footer p, a {
     
     display: inline-block;
     width: 49.5%;
-    height: 100%;
 }
 
 .contact-main-container div a {
@@ -373,4 +374,18 @@ footer p, a {
 
 .width100{
     width: 100%;
+}
+
+.post-container h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.blogs-post-container .post-container p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Ajusta el valor según tu preferencia */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

@@ -92,11 +92,11 @@ function FormXSD() {
     // estado redes sociales
     const [redesSociales1, setRedesSociales1] = useState({
         active: false,
-        facebook: { isActive: false, url: '', name: 'facebook' },
-        youtube: { isActive: false, url: '', name: 'youtube' },
-        instagram: { isActive: false, url: '', name: 'instagram' },
-        twitter: { isActive: false, url: '', name: 'twitter' },
-        whatsapp: { isActive: false, url: '', name: 'whatsapp' },
+        facebook: { isActive: false, url: '', name: '001-facebook' },
+        youtube: { isActive: false, url: '', name: '008-youtube' },
+        instagram: { isActive: false, url: '', name: '011-instagram' },
+        twitter: { isActive: false, url: '', name: '002-twitter' },
+        whatsapp: { isActive: false, url: '', name: '003-whatsapp' },
     });
     // handlers redes sociales
     const handleRedesSocialesActiveChange = e => setRedesSociales1({ ...redesSociales1, active: e.target.value === 'si' });
@@ -183,7 +183,7 @@ function FormXSD() {
                 postsElement.ele('descripcion').txt(db_posts[i].descripcion);
                 postsElement.ele('url').txt(db_posts[i].url);
             }
-            if (selectionContacto) {
+            if (selectionContacto === 'si') {
                 const contactoElement = mainElement.ele('contacto');
                 contactoElement.ele('correo').txt(email);
                 contactoElement.ele('paginaWeb').txt(paginaWeb);
@@ -218,8 +218,8 @@ function FormXSD() {
                         switch (res.data.status) {
                             case 200:  // Todo está bien
                                 setModalContent({
-                                    title: 'Exito',
-                                    body: res.data.message,
+                                    title: res.data.message,
+                                    body: res.data.data,
                                     variant: 'success'
                                 });
                                 break;

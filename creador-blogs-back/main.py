@@ -32,9 +32,17 @@ async def validate_xml(file: UploadFile = File(...), res: Response = None):
         if not schema.validate(doc):
             error = schema.error_log.last_error
             raise Exception(str(error))
+        # Transformamos el XML a HTML
+        with open('./resources/transform.xslt', 'rb') as xslt_file:
+            xslt_root = etree.XML(xslt_file.read())
+        transform = etree.XSLT(xslt_root)
+        result_tree = transform(doc)
+        result_str = etree.tostring(result_tree, pretty_print=True)
+        result = result_str.decode('utf-8')
+
         res.status_code = status.HTTP_200_OK
         response.status = status.HTTP_200_OK
-        response.data = []
+        response.data = [str(result)]
         response.message = "XML VALIDO"
     except Exception as e:
         print('ERROR:', str(e))

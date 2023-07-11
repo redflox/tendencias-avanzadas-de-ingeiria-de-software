@@ -5,3 +5,4 @@ class ApiResponse(BaseModel):
     status: str
     data: Optional[Any] = None
     message: str
+
