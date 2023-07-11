@@ -19,7 +19,7 @@ basado en las metodologías MDA y MDE.
    En este momento ya debe estarse ejecutando el back
 8. Abre otra terminal, situate en la ruta //creador-blogs y ejecuta los siguientes 2 comandos:
       - npm install
-      - npm start
+      - npm start.\
    En este momento se esta ejecutando el front, debe abrirse el navegador, en caso de no hacerlo
    abre el navegador y ve a la ruta localhost:3000
 9. Encontraras 3 pestañas, en la pestaña"Upload File" se podra cargar un archivo .xml y se validara si cumple la estructura del XSD.
