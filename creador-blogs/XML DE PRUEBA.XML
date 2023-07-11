@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="schema.xsd">
+    <!-- NOMBRE: kevin -->
+    <header>
+        <redesSociales>
+            <socialMedia>
+                <icono>icono1.png</icono>
+                <url>https://www.redsocial1.com</url>
+            </socialMedia>
+            <socialMedia>
+                <icono>icono2.png</icono>
+                <url>https://www.redsocial2.com</url>
+            </socialMedia>
+        </redesSociales>
+        <navbar>
+            <logo>
+                <imagen>logo.png</imagen>
+                <url>https://www.blog.com</url>
+            </logo>
+            <pages>
+                <nombre>Página 1</nombre>
+                <url>https://www.blog.com/pagina1</url>
+            </pages>
+        </navbar>
+    </header>
+    <!-- NOMBRE: Alejandro -->
+    <main>
+        <blogDestacado>
+            <imagen>destacado.png</imagen>
+            <titulo>Blog Destacado</titulo>
+            <descripcion>Descripción del blog destacado</descripcion>
+            <url>https://www.blog.com/blog-destacado</url>
+        </blogDestacado>
+        <!-- NOMBRE:  Ramiro-->
+        <todosLosBlogs>
+            <posts>
+                <imagen>post1.png</imagen>
+                <titulo>Primer Post</titulo>
+                <descripcion>Descripción del primer post</descripcion>
+                <url>https://www.blog.com/post1</url>
+            </posts>
+            <posts>
+                <imagen>post2.png</imagen>
+                <titulo>Segundo Post</titulo>
+                <descripcion>Descripción del segundo post</descripcion>
+                <url>https://www.blog.com/post2</url>
+            </posts>
+        </todosLosBlogs>
+        <contacto>
+            <correo>contacto@blog.com</correo>
+            <paginaWeb>https://www.blog.com/contacto</paginaWeb>
+        </contacto>
+    </main>
+    <!-- NOMBRE:  Bryan-->
+    <footer>
+        <url>https://www.blog.com</url>
+        <imagen>footer.png</imagen>
+        <texto>Derechos de autor © 2023 Blog</texto>
+    </footer>
+</blog>

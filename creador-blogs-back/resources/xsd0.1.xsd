@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="blog">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="header" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="redesSociales" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="socialMedia" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="icono" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                                <xs:element name="url" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="navbar" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="logo" minOccurs="1" maxOccurs="1">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="imagen" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                                <xs:element name="url" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="pages" minOccurs="1" maxOccurs="1">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="nombre" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                                <xs:element name="url" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="main" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="blogDestacado" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="imagen" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                    <xs:element name="titulo" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                    <xs:element name="descripcion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                    <xs:element name="url" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="todosLosBlogs" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="posts" minOccurs="1" maxOccurs="10">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="imagen" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                                <xs:element name="titulo" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                                <xs:element name="descripcion" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                                <xs:element name="url" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="contacto" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="correo" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                    <xs:element name="paginaWeb" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="footer" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="imagen" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="texto" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>
+
+<!-- BLOG -->
+    <!-- HEADER -->
+            <!-- REDES SOCIALES -->
+                <!-- FACEBOOK -->
+                    <!-- ICONO -->
+                    <!-- URL -->
+                <!-- INSTAGRAM -->
+                    <!-- ICONO -->
+                    <!-- URL -->
+            <!-- NAVBAR -->
+                <!-- LOGO -->
+                    <!-- IMAGEN -->
+                    <!-- URL -->
+                <!-- PAGES -->
+                    <!-- NOMBRE -->
+                    <!-- URL -->
+    
+    <!-- MAIN -->
+        <!-- BLOG DESTACADO -->
+            <!-- IMAGEN -->
+            <!-- TITULO -->
+            <!-- DESCRIPCION -->
+            <!-- URL -->
+
+        <!-- TODOS LOS BLOGS -->
+            <!-- POSTS -->
+                <!-- IMAGEN -->
+                <!-- TITULO -->
+                <!-- DESCRIPCION -->
+                <!-- URL -->
+        <!-- CONTACTO -->
+            <!-- CORREO -->
+            <!-- PAGINA WEB -->
+
+    <!-- FOOTER -->
+            <!-- URL -->
+            <!-- IMAGEN -->
+            <!-- TEXTO -->

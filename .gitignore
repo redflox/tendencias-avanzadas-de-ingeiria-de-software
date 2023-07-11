@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.egg-info/
+.env
+.env.*
+venv/
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+GENERATORS/
+
+# Editor
+.vscode/
+*.swp
+*.swo
+*.swn
+*.bak
+.DS_Store
+.env
+
+# Build
+build/
+dist/
+
+# Testing
+coverage/

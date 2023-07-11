@@ -1,6 +1,5 @@
 # GENERADOR DE BLOGS WEB.
-
-
+https://prod.liveshare.vsengsaas.visualstudio.com/join?371876BC542A42A94CF4B5530AD101C135DF
 # Estructura
 
 - Header
@@ -37,7 +36,4 @@
 
 - https://github.com/Akash1362000/Django_BlogApp 
 
-<xs:header>
-
-</xs:header>
 
