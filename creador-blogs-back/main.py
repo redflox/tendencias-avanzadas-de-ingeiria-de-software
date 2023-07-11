@@ -21,7 +21,7 @@ async def validate_xml(file: UploadFile = File(...), res: Response = None):
     try:
         response = ApiResponse(status="", data=[], message="")
         # Leemos el archivo XSD de nuestro sistema local
-        with open("blog.xsd", 'rb') as xsd_file:
+        with open("./resources/xsd0.1.xsd", 'rb') as xsd_file:
             schema_root = etree.XML(xsd_file.read())
         schema = etree.XMLSchema(schema_root)
         # Ahora leemos el archivo XML que se subió
