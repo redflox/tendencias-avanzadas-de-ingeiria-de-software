@@ -4,11 +4,27 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?371876BC542A42A94CF4B5530
 prototipo generador de código automatico para la creación de blogs personalizados, 
 basado en las metodologías MDA y MDE. 
 
-## instalación 🚀
+## instalación para win🚀
 
 1. Clona este repositorio citado al inicio.
 2. Ve al directorio del proyecto.
-3. Instala las dependencias.
+3. Asegurate de tener instalado python en la version 3.9 en adelante.
+4. Abre el proyecto en un IDE.
+5. Abre la consola o terminal del IDE.
+6. Ubicate en la ruta //creador-blogs-back.
+7. Ahora ejecuta los siguientes 4 comandos uno por uno:
+       python3 -m venv venv
+       .\venv\Scripts\activate
+       pip install -r .\requirement
+       hypercorn main:app --bind 0.0.0.00.0.0:8000
+   En este momento ya debe estarse ejecutando el back
+8. Abre otra terminal, situate en la ruta //creador-blogs y ejecuta los siguientes 2 comandos:
+       npm install
+       npm start
+   En este momento se esta ejecutando el front, debe abrirse el navegador, en caso de no hacerlo
+   abre el navegador y ve a la ruta localhost:3000
+9. Encontraras 3 pestañas, en la pestaña"Upload File" se podra cargar un archivo .xml y se validara si cumple la estructura del XSD.
+    En la pestaña Form XSD se podra elegir los componentes que se quiera que contenga la pagina web, una vez seleccionados se envian y el software hace la validacion de la esctructura con el metamodelo, si es valida entonces crea la pagina web que se podra descargar en un archivo .zip el cual se puede descomprimir y dentro de el estara el archivo index.html si se abre este archivo se podra visualisar la pagina generada.
 
 ### Pre-requisitos 📋
 
