@@ -83,7 +83,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Documentación 📖
 
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [cloud](https://udistritaleduco-my.sharepoint.com/:f:/g/personal/ksholguinb_udistrital_edu_co/EpDgaxeFhLRLvLNo-SCdBwcBDaIaxu8c2unbEvkR_Uj5Sw?e=1peHeX)
+Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [repositorio](https://udistritaleduco-my.sharepoint.com/:f:/g/personal/ksholguinb_udistrital_edu_co/EpDgaxeFhLRLvLNo-SCdBwcBDaIaxu8c2unbEvkR_Uj5Sw?e=1peHeX)
 
 ## Version 📌
 
