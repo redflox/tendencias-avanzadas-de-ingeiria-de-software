@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, HTTPException, File, Response, status
+from fastapi import FastAPI, UploadFile, HTTPException, File, Response, status, Request
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from lxml import etree
@@ -78,7 +78,6 @@ async def validate_xml(file: UploadFile = File(...), res: Response = None):
             zip_file.write(f'./GENERATORS/result_{filename}/index.html', arcname='index.html')
         # Borrar la carpeta:
         shutil.rmtree(f'./GENERATORS/result_{filename}')
-
         res.status_code = status.HTTP_200_OK
         response.status = status.HTTP_200_OK
         # response.data = [str(result)]
@@ -94,4 +93,7 @@ async def validate_xml(file: UploadFile = File(...), res: Response = None):
 
 @app.get("/download/{filename}")
 async def download_file(filename: str):
-    return FileResponse(path=f'./GENERATORS/{filename}.zip', filename=filename, media_type='application/zip')
+    try:
+        return FileResponse(path=f'./GENERATORS/{filename}.zip', filename=filename, media_type='application/zip')
+    except Exception as e:
+        return Response(content={"message": "Archivo no encontrado."}, status_code=404)

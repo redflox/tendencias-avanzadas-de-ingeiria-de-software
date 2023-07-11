@@ -219,7 +219,7 @@ function FormXSD() {
                             case 200:  // Todo está bien
                                 setModalContent({
                                     title: res.data.message,
-                                    body: res.data.data,
+                                    body: <a href={res.data.data}>Descargar</a>,
                                     variant: 'success'
                                 });
                                 break;
