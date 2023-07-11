@@ -93,10 +93,10 @@ version 1.0
 ## Autores ✒️
 Estudiantes del grupo Tendencias Avanzadas de software
 
-* **Kevin Holguín** - *Trabajo Inicial* - [Kevin-HB18](https://github.com/alejandrob46)
-* **Bryan Muñoz** - *Documentación* - [swsbmm](https://github.com/swsbmm)
-* **Alejandro Bustamante** - *Documentación* - [alejandrob46](https://github.com/alejandrob46)
-* **Esteban Riveros** - *Documentación* - [riverosp](https://github.com/reriverosp)
+* **Kevin Holguín** - *Developer* - [Kevin-HB18](https://github.com/alejandrob46)
+* **Bryan Muñoz** - *Scrum Master* - [swsbmm](https://github.com/swsbmm)
+* **Alejandro Bustamante** - *Developer* - [alejandrob46](https://github.com/alejandrob46)
+* **Esteban Riveros** - *Poduct Owner* - [riverosp](https://github.com/reriverosp)
 
 
 # REFERENCIAS:
