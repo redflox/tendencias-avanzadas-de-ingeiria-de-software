@@ -3,13 +3,13 @@
 Prototipo generador de código automatico para la creación de blogs personalizados, 
 basado en las metodologías MDA y MDE. 
 
-## instalación para win🚀
+## instalación para S.O. windows🚀
 
 1. Clona este repositorio citado al inicio.
 2. Ve al directorio del proyecto.
 3. Asegurate de tener instalado python en la version 3.9 en adelante.
-4. Abre el proyecto en un IDE.
-5. Abre la consola o terminal del IDE.
+4. Abre el proyecto en un Visual Studio Code.
+5. Abre la consola o terminal del Visual Studio Code.
 6. Ubicate en la ruta //creador-blogs-back.
 7. Ahora ejecuta los siguientes 4 comandos uno por uno:
        python3 -m venv venv
