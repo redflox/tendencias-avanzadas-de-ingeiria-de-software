@@ -1,6 +1,6 @@
 # GENERADOR DE BLOGS WEB.
 
-prototipo generador de código automatico para la creación de blogs personalizados, 
+Prototipo generador de código automatico para la creación de blogs personalizados, 
 basado en las metodologías MDA y MDE. 
 
 ## instalación para win🚀
