@@ -7,7 +7,7 @@ basado en las metodologías MDA y MDE.
 
 Entorno Visual Studio code \
 Node.js \
-Python 3 
+Python 3.9 en adelante
 
 ## instalación para S.O. windows🚀
 
