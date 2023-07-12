@@ -3,6 +3,13 @@
 Prototipo generador de código automatico para la creación de blogs personalizados, 
 basado en las metodologías MDA y MDE. 
 
+### Pre-requisitos 📋
+
+Entorno Visual Studio code \
+Node.js \
+Python 3 \
+
+
 ## instalación para S.O. windows🚀
 
 1. Clona este repositorio citado al inicio.
@@ -24,10 +31,6 @@ basado en las metodologías MDA y MDE.
    abre el navegador y ve a la ruta localhost:3000
 9. Encontraras 3 pestañas, en la pestaña"Upload File" se podra cargar un archivo .xml y se validara si cumple la estructura del XSD.
     En la pestaña Form XSD se podra elegir los componentes que se quiera que contenga la pagina web, una vez seleccionados se envian y el software hace la validacion de la esctructura con el metamodelo, si es valida entonces crea la pagina web que se podra descargar en un archivo .zip el cual se puede descomprimir y dentro de el estara el archivo index.html si se abre este archivo se podra visualisar la pagina generada.
-
-### Pre-requisitos 📋
-
-Entorno Visual Studio code
 
 # Estructura.
 
