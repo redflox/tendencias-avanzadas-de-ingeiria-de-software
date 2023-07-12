@@ -15,7 +15,7 @@ basado en las metodologías MDA y MDE.
       - python3 -m venv venv
       - .\venv\Scripts\activate
       - pip install -r .\requirements.txt
-      - hypercorn main:app --bind 0.0.0.00.0.0:8000 .\
+      - hypercorn main:app --bind 0.0.0.00.0.0:8000 \
    En este momento ya debe estarse ejecutando el back
 8. Abre otra terminal, situate en la ruta //creador-blogs y ejecuta los siguientes 2 comandos:
       - npm install
