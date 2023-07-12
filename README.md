@@ -14,7 +14,7 @@ basado en las metodologías MDA y MDE.
 7. Ahora ejecuta los siguientes 4 comandos uno por uno:
       - python3 -m venv venv
       - .\venv\Scripts\activate
-      - pip install -r .\requirement
+      - pip install -r .\requirements
       - hypercorn main:app --bind 0.0.0.00.0.0:8000 .\
    En este momento ya debe estarse ejecutando el back
 8. Abre otra terminal, situate en la ruta //creador-blogs y ejecuta los siguientes 2 comandos:
